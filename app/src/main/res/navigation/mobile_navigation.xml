@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="keer.matrimony.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="keer.matrimony.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_navigationDetails2"
+            app:destination="@id/navigationDetails" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="keer.matrimony.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" >
+        <action
+            android:id="@+id/action_navigation_notifications_to_EditPerosnal"
+            app:destination="@id/EditPerosnal" />
+        <action
+            android:id="@+id/action_navigation_notifications_to_EditReligion"
+            app:destination="@id/EditReligion" />
+        <action
+            android:id="@+id/action_navigation_notifications_to_EditContact"
+            app:destination="@id/EditContact" />
+        <action
+            android:id="@+id/action_navigation_notifications_to_EditEducation"
+            app:destination="@id/EditEducation" />
+        <action
+            android:id="@+id/action_navigation_notifications_to_EditPartner"
+            app:destination="@id/EditPartner" />
+        <action
+            android:id="@+id/action_navigation_notifications_to_EditFamily"
+            app:destination="@id/EditFamily" />
+    </fragment>
+    <fragment
+        android:id="@+id/EditPerosnal"
+        android:name="keer.matrimony.UIFragments.Edit.EditPersonal"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_edit_personal" />
+    <fragment
+        android:id="@+id/EditPartner"
+        android:name="keer.matrimony.UIFragments.Edit.EditPartner"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_edit_partner" />
+    <fragment
+        android:id="@+id/EditReligion"
+        android:name="keer.matrimony.UIFragments.Edit.EditReligion"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_edit_personal" />
+    <fragment
+        android:id="@+id/EditFamily"
+        android:name="keer.matrimony.UIFragments.Edit.EditFamilyDetails"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_edit_family_details" />
+    <fragment
+        android:id="@+id/EditContact"
+        android:name="keer.matrimony.UIFragments.Edit.EditContact"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_edit_personal" />
+    <fragment
+        android:id="@+id/EditEducation"
+        android:name="keer.matrimony.UIFragments.Edit.EditEducation"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_edit_personal" />
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="keer.matrimony.ui.search.SearchFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/search_fragment" />
+
+    <fragment
+        android:id="@+id/navigationDetails"
+        android:name="keer.matrimony.UIFragments.ProfileDetails"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/profile_list_layout" >
+        <action
+            app:popUpTo="@id/navigation_dashboard"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_navigationDetails_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+        <action
+            android:id="@+id/action_navigationDetails_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+</navigation>
